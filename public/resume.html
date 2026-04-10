@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeel Kundariya - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --text-dark: #000000;
+            --text-light: #444444;
+            --divider: #999999;
+            --font-serif: 'PT Serif', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f0f0f0;
+            color: var(--text-dark);
+            line-height: 1.25;
+            padding: 20px 0;
+        }
+
+        .resume-page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 10mm 12mm;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2mm;
+        }
+
+        .header-left h1 {
+            font-family: var(--font-serif);
+            font-size: 32pt;
+            font-weight: 700;
+            margin-bottom: 1mm;
+        }
+
+        .header-left .subtitle {
+            font-family: var(--font-serif);
+            font-size: 14pt;
+            color: var(--text-light);
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5mm;
+        }
+
+        .header-right .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2mm;
+        }
+
+        .header-right i {
+            color: var(--text-light);
+            font-size: 10pt;
+        }
+
+        /* Nav Bar */
+        .nav-bar {
+            display: flex;
+            border: 1px solid #000;
+            margin: 2mm 0 4mm;
+            font-family: var(--font-serif);
+            font-size: 11pt;
+            font-weight: 400;
+        }
+
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            padding: 1mm 0;
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2mm;
+            border-right: 1px solid #000;
+        }
+
+        .nav-item:last-child {
+            border-right: none;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 43% 57%;
+            gap: 6mm;
+            flex: 1;
+        }
+
+        .left-col,
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 3mm;
+        }
+
+        /* Section Styling */
+        section h2 {
+            font-family: var(--font-serif);
+            font-size: 18pt;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+            border-bottom: 1px solid var(--divider);
+            margin-bottom: 2mm;
+            padding-bottom: 0.5mm;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 1mm;
+        }
+
+        .item {
+            margin-bottom: 3mm;
+        }
+
+        .item-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5mm;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .item-date {
+            font-size: 9.5pt;
+            color: var(--text-light);
+        }
+
+        .item-subtitle {
+            font-size: 9.5pt;
+            color: var(--text-dark);
+            margin-bottom: 1mm;
+        }
+
+        p,
+        li {
+            font-size: 8.5pt;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        ul {
+            padding-left: 4mm;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 0.5mm;
+        }
+
+        .tech-line {
+            font-weight: 700;
+            font-size: 8.5pt;
+            margin: 1mm 0;
+        }
+
+        .links-line {
+            font-size: 9.5pt;
+            margin-top: 1.5mm;
+        }
+
+        .links-line a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2mm;
+        }
+
+        .skill-category {
+            font-size: 8.5pt;
+        }
+
+        .skill-category b {
+            font-weight: 700;
+        }
+
+        /* Grid for Certificates and Hackathon Items */
+        .listing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1mm 4mm;
+        }
+
+        .listing-item {
+            font-size: 8pt;
+            display: flex;
+            gap: 1.5mm;
+        }
+
+        .listing-num {
+            min-width: 3mm;
+        }
+
+        /* Project Icons Grid */
+        .project-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2mm;
+            margin-top: 2mm;
+        }
+
+        .project-icon-item {
+            font-size: 8.5pt;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .project-icon-item::before {
+            content: '•';
+            font-size: 12pt;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+            }
+
+            .resume-page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-page">
+        <header>
+            <div class="header-left">
+                <h1>Zeel Kundariya</h1>
+                <div class="subtitle">Full-Stack Developer</div>
+            </div>
+            <div class="header-right">
+                <div class="contact-item">
+                    <span>9714860362<span>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-item">
+                    <span>zeel.kundariya.m.cg@gmail.com</span>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-item">
+                    <span>Gandhinagar</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-bar">
+            <a href="https://www.linkedin.com/in/zeel-kundariya" class="nav-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Zeelkundariya" class="nav-item"><i class="fab fa-github"></i> Github</a>
+            <a href="https://www.youtube.com/@ZeelKundariya" class="nav-item"><i class="fab fa-youtube"></i> Youtube</a>
+            <a href="#" class="nav-item"><i class="fas fa-briefcase"></i> Portfolio</a>
+            <a href="https://leetcode.com/u/Zeel1304/" class="nav-item"><i class="fas fa-code"></i> Leetcode</a>
+        </div>
+
+        <div class="content-grid">
+            <div class="left-col">
+                <section>
+                    <h2>SKILLS</h2>
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <b>• Languages & Frameworks:</b> JavaScript (ES6+), C++, React.js, HTML, CSS, Tailwind CSS
+                        </div>
+                        <div class="skill-category">
+                            <b>• Databases & Backend:</b> MongoDB, REST APIs, Cloudinary, Node.js
+                        </div>
+                        <div class="skill-category">
+                            <b>• Tools & Platforms:</b> Git, GitHub, Postman, npm, Vercel, Netlify, Render, Figma,
+                            Hostinger
+                        </div>
+                        <div class="skill-category">
+                            <b>• UI/UX Design:</b> Figma, Wireframing, Prototyping
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CERTIFICATES</h2>
+                    <div class="listing-grid">
+                        <div class="listing-item"><span class="listing-num">1.</span> Odoo x Adani University Hackathon '26
+</div>
+                        <div class="listing-item"><span class="listing-num">9.</span> Tech Expo Hackathon</div>
+                        <div class="listing-item"><span class="listing-num">2.</span> InnovAItion - Shaping Future Innovators
+                        </div>
+                        <div class="listing-item"><span class="listing-num">10.</span>FinAgent Hackathon</div>
+                        <div class="listing-item"><span class="listing-num">3.</span> Repo Reboot</div>
+                        <div class="listing-item"><span class="listing-num">11.</span> Neural Nexus 2.0</div>
+                        <div class="listing-item"><span class="listing-num">4.</span> CodeMatrix: Genesis Hackathon</div>
+                        <div class="listing-item"><span class="listing-num">12.</span> Rethink</div>
+                        <div class="listing-item"><span class="listing-num">5.</span> K Hacks 3.0</div>
+                        <div class="listing-item"><span class="listing-num">13.</span>Code Clash</div>
+                        <div class="listing-item"><span class="listing-num">6.</span> GitHub Copilot Fundamentals</div>
+                        <div class="listing-item"><span class="listing-num">14.</span>Dev Heat Hackathon</div>
+                        <div class="listing-item"><span class="listing-num">7.</span> Github Portfolio Analyzer Hackathon </div>
+                        <div class="listing-item"><span class="listing-num">15.</span>Emotion Aware Encryption Hackathon </div>
+                        <div class="listing-item"><span class="listing-num">8.</span>Hack.X - HTS'26 </div>
+                        <div class="listing-item"><span class="listing-num">16.</span>Xpecto'26 Hackathon </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>HACKATHON</h2>
+                    <div class="item">
+                        <h3>1. Hackathon Finalist – REPO REBOOT’25</h3>
+                        <p style="font-size: 8pt; color: #666; font-style: italic;">Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT), Gandhinagar  | Nov 2025</p>
+                        <ul>
+                            <li>Selected as a Finalist in Hackatron during Repo REBOOT '25</li>
+                            <li>Participated as a team leader of Royal Rebooters</li>
+                            <li>Demonstrated strong problem-solving, teamwork, and technical skills</li>
+                        </ul>
+                        <div class="links-line" style="font-size: 8.5pt;">
+                            <a href="#">Certificate</a> | <a href="#">Github</a> | <a href="#">Infotsav</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3>2. Hack Innovate 2026 - AI for Vision | OR for Precision</h3>
+                        <ul>
+                            <li>Selected as a Finalist in Hackatron during Hack Innovate 2026 OR for Precision</li>
+                            <li>Participated as a team member </li>
+                            <li>Demonstrated strong problem-solving, teamwork, and technical skills</li>
+                        </ul>
+                        <div class="links-line" style="font-size: 8.5pt;">
+                            <a href="#">Certificate</a> | <a href="#">Github</a> | <a href="#">Infotsav</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3>3. InnovAItion - Shaping Future Innovators</h3>
+                        <p>Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT), Gandhinagar.</p>
+                                                <ul>
+                            <li>Selected as a Finalist in Hackatron during Innovators Prime</li>
+                            <li>Participated as a team leader of Innovators Prime</li>
+                            <li>Demonstrated strong problem-solving, teamwork, and technical skills</li>
+                        </ul>
+
+                        <div class="links-line" style="font-size: 8.5pt;">
+                            <a href="#">Certificate</a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="listing-grid">
+                        <div class="listing-item"><span class="listing-num">4.</span> IDEATHON</div>
+                        <div class="listing-item"><span class="listing-num">5.</span> TrubleShoot Ideathon</div>
+                        <div class="listing-item"><span class="listing-num">6.</span> A2HACKFEST</div>
+                        <div class="listing-item"><span class="listing-num">7.</span> Hackground</div>
+                        <div class="listing-item"><span class="listing-num">8.</span> Code Cucible</div>
+                        <div class="listing-item"><span class="listing-num">9.</span> Hackout</div>
+                        <div class="listing-item"><span class="listing-num">10.</span> HackShastra</div>
+                        <div class="listing-item"><span class="listing-num">11.</span> ThrizlI-Build to Bond</div>
+                        <div class="listing-item"><span class="listing-num">12.</span> Paranox 2.0</div>
+                    </div> -->
+                </section>
+
+                <section>
+                    <h2>EDUCATION</h2>
+                    <div class="item">
+                        <h3>Swaminarayan University, kalol</h3>
+                        <div class="item-subtitle">Bachelor of technology</div>
+                        <div class="item-date">2025 – 2029</div>
+                    </div>
+                    <div class="item">
+                        <h3>Khyati World School, Ahmedabad</h3>
+                        <div class="item-subtitle">Higher Secondary Education</div>
+                        <div class="item-date">2023 – 2025</div>
+                    </div>
+                    <div class="item">
+                        <h3>Metas Adventist International School, Vyara</h3>
+                        <div class="item-subtitle">School Secondary Education</div>
+                        <div class="item-date">2021 – 2023</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>LANGUAGE</h2>
+                    <div style="font-size: 10pt; font-family: var(--font-serif); display: flex; gap: 4mm;">
+                        <span>English</span> | <span>Gujarati – Native</span> | <span>Hindi</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-col">
+                <section>
+                    <h2>Projects </h2>
+                    <div class="item">
+                        <h3>Clinker Supply Chain Optimization</h3>
+                        <ul>
+                            <li><b>Overview:</b> Developed a multi-period optimization model to minimize clinker production, transportation, and inventory costs across Integrated and Grinding Units. The model incorporates production capacities, transport constraints, safety stock requirements, and integer trip limits. Extended the framework to handle demand uncertainty using scenario-based or robust optimization techniques for improved planning reliability.
+                            </li>
+                            <li><b>Technologies:</b> Python, Pyomo, Gurobi, Scenario-based OPtimization, Pandas, Numpy,  Supply Chain Modeling,</li>
+                        </ul>
+                        <div class="links-line">
+                            Links: <a href="#">Live</a> | <a href="#">Demo</a> | <a href="#">Postman</a> | <a
+                                href="#">Appreciation</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h3>Smart Expense Management System</h3>
+                        <ul>
+                            <li><b>Overview:</b> The Smart Expense Management System is a full-stack web application that automates expense reimbursement workflows. It includes role-based access control, multi-level and conditional approvals, and receipt upload with OCR-based data extraction. The system supports multi-currency expenses, ensuring secure processing, transparency, and efficient tracking of organizational expense approvals.</li>
+                            <li><b>Technologies:</b> Tailwind CSS, Node.js, Express.js, MOngoDB, JWT, Role-Based Access Control (RBAC), Tesseract.js, RESTful APIs, Multer, Render.</li>
+                        </ul>
+                        <div class="links-line">
+                            Links: <a href="#">Github</a> | <a href="#">Demo</a> | <a href="#">Live</a> | <a
+                                href="#">Postman</a> | <a href="#">Closed PRs</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3>Adaptive Learning Platform</h3>
+                        <ul>
+                            <li><b>Overview:</b> The Adaptive Learning Platform is an AI-powered system that personalizes curriculum paths based on students’ knowledge gaps, learning styles, pace, and real-time performance. It delivers dynamic lessons, quizzes, and practice tasks that adjust automatically. Emotion-sensing technology monitors engagement, enabling the platform to continuously adapt content for an effective, motivating learning experience..</li>
+                            <li><b>Technologies:</b> Tailwind CSS, Node.js, Express.js, Mongodb, Face Recognition API, JWT, RESTful APIs, Render.</li>
+                        </ul>
+                        <div class="links-line">
+                            Links: <a href="#">Github</a> | <a href="#">Demo</a> | <a href="#">Live</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Frontend & UI/UX Projects</h3>
+                    <div class="project-icons-grid">
+                        <div class="project-icon-item">Pokamon Cards</div>
+                                                <div class="project-icon-item">CodingGita</div>
+
+                        <div class="project-icon-item">BookMyShow Clone </div>
+                        <div class="project-icon-item">Youtube Clone</div>
+                        <div class="project-icon-item">Redbus Clone</div>
+                        <div class="project-icon-item">MultiDay Tours</div>
+                        <div class="project-icon-item">Instagram Clone</div>
+                        <div class="project-icon-item">Amazon Clone</div>
+                        <div class="project-icon-item">Flipkart Clone</div>
+                        <div class="project-icon-item">Netfilx Clone</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Open Source Contributions</h2>
+                    <div class="item">
+                        <h3>Task Bridge</h3>
+                        <p>Implemented an interactive virtual whiteboard using React and Fabric.js, enabling freehand
+                            drawing, shapes, text tools, color selection, and draggable canvas objects with persistent
+                            state management.</p>
+                        <div class="links-line">
+                            Links: <a href="#">Github</a> | <a href="#">Closed PRs</a> | <a href="#">Issues</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3>Tattoo Studio Website</h3>
+                        <p>Developed a client reviews and testimonials system with star ratings, image uploads, and
+                            admin moderation, improving user trust, engagement, and platform credibility.</p>
+                        <div class="links-line">
+                            Links: <a href="#">Github</a> | <a href="#">Closed PRs</a> | <a href="#">Issues</a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3>AnimeVerse</h3>
+                        <p>Implemented a secure JWT-based authentication system with role-based access control
+                            (Admin/User), forgot password functionality, and login email notifications using MongoDB for
+                            session management.</p>
+                        <div class="links-line">
+                            Links: <a href="#">Github</a> | <a href="#">Closed PRs</a> | <a href="#">Issues</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
