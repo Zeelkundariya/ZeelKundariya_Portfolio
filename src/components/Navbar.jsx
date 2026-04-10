@@ -17,6 +17,20 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  const scrollToSection = (e, href) => {
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    const elem = document.getElementById(targetId)
+    
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' })
+      // Update URL without #
+      const cleanPath = targetId === 'hero' ? '/' : `/${targetId}`
+      window.history.pushState(null, '', cleanPath)
+    }
+    closeMenu()
+  }
+
   const navLinks = [
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
@@ -28,7 +42,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-[999999] transition-all duration-300 bg-transparent backdrop-blur-md" id="navbar">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#hero" className="flex flex-row items-center gap-3 group magnetic-btn no-underline">
+        <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="flex flex-row items-center gap-3 group magnetic-btn no-underline">
           <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-primary via-secondary to-primary rounded-xl group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-primary/20 overflow-hidden">
             <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-colors"></div>
             <span className="relative font-black text-white text-xl">Z</span>
@@ -38,7 +52,12 @@ export default function Navbar() {
 
         <div className="hidden md:flex space-x-8 items-center font-semibold text-sm">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="nav-link text-slate-400 hover:text-white transition-all magnetic-btn">{link.label}</a>
+            <a key={link.href} 
+               href={link.href} 
+               onClick={(e) => scrollToSection(e, link.href)}
+               className="nav-link text-slate-400 hover:text-white transition-all magnetic-btn">
+              {link.label}
+            </a>
           ))}
           <a href="/resume.html" download className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 text-sm font-bold tracking-wide magnetic-btn">
             Download Resume
@@ -55,7 +74,12 @@ export default function Navbar() {
            style={{ opacity: mobileOpen ? 1 : 0, transform: mobileOpen ? 'translateY(0)' : 'translateY(-20px)' }}>
         <div className="flex flex-col p-8 space-y-6 text-center">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} onClick={closeMenu} className="text-xl font-semibold text-slate-300 hover:text-primary transition-colors">{link.label}</a>
+            <a key={link.href} 
+               href={link.href} 
+               onClick={(e) => scrollToSection(e, link.href)} 
+               className="text-xl font-semibold text-slate-300 hover:text-primary transition-colors">
+              {link.label}
+            </a>
           ))}
           <div className="pt-4 border-t border-slate-800/50">
             <a href="/resume.html" download className="w-full inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg shadow-lg shadow-primary/20">

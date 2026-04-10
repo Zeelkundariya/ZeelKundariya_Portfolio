@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight, ChevronDown, Code2 } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TwitterIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon } from './BrandIcons'
 
 export default function Hero() {
   const typedRef = useRef(null)
@@ -44,9 +44,9 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-x-hidden">
       <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-20 items-center justify-items-center">
         <div className="order-2 md:order-1 text-center md:text-left w-full flex flex-col items-center md:items-start">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 mb-8 mx-auto md:mx-0 shadow-inner" data-aos="fade-down" data-aos-delay="0">
-            <span className="text-secondary animate-wiggle">👋</span>
-            <span className="text-slate-300 font-semibold text-xs md:text-sm tracking-wide uppercase">Welcome to my portfolio</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-800/50 border border-slate-700 mb-8 mx-auto md:mx-0 shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-500 group cursor-pointer" data-aos="fade-down" data-aos-delay="0">
+            <span className="text-secondary animate-wiggle inline-block emoji-pop-out transition-all duration-300">👋</span>
+            <span className="text-slate-300 font-bold text-xs md:text-sm tracking-widest uppercase shimmer-text">Welcome to my portfolio</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-[1.1] font-display" data-aos="fade-up" data-aos-delay="100">
@@ -80,13 +80,11 @@ export default function Hero() {
             <a href="https://www.linkedin.com/in/zeel-kundariya-bb18b5382" target="_blank" rel="noreferrer" className="hover:text-primary hover:scale-110 transition-all magnetic-btn">
               <LinkedinIcon className="w-6 h-6" />
             </a>
+            <a href="https://leetcode.com/u/Zeelkundariya/" target="_blank" rel="noreferrer" className="hover:text-[#FFA116] hover:scale-110 transition-all magnetic-btn group" title="LeetCode">
+              <LeetCodeIcon className="w-6 h-6 fill-current text-slate-400 group-hover:text-[#FFA116] transition-colors" />
+            </a>
             <a href="https://x.com/ZeelKundariya" target="_blank" rel="noreferrer" className="hover:text-primary hover:scale-110 transition-all magnetic-btn">
               <TwitterIcon className="w-6 h-6" />
-            </a>
-            <a href="https://leetcode.com/u/Zeelkundariya/" target="_blank" rel="noreferrer" className="hover:text-[#FFA116] hover:scale-110 transition-all magnetic-btn group" title="LeetCode">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current text-slate-400 group-hover:text-[#FFA116] transition-colors">
-                <path d="M16.105 18.567l.598-1.554a6.376 6.376 0 1 1-11.474-6.587l3.334-3.33a3.3 3.3 0 1 1 4.667 4.668l-2.254 2.253a6.376 6.376 0 0 1 5.184 2.585zm-1.636-5.87l-.17-.171a1.301 1.301 0 1 0-1.837-1.838l-2.254 2.253a6.376 6.376 0 0 0 5.184 2.586l-.598 1.553a6.376 6.376 0 1 1-11.474-6.587l3.334-3.33a3.3 3.3 0 0 1 4.666 4.666l-.66-.666a1.3 1.3 0 1 0-1.838-1.838z" />
-              </svg>
             </a>
           </div>
         </div>

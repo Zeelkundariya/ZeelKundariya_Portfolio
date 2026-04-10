@@ -117,6 +117,51 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Clean URL Scroll Tracker (Intersection Observer)
+  useEffect(() => {
+    if (!preloaderDone) return
+
+    const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'certificates', 'contact']
+    const observerOptions = {
+      root: null,
+      threshold: 0.5,
+    }
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id
+          const cleanPath = sectionId === 'hero' ? '/' : `/${sectionId}`
+          
+          // Only update if current path is different to avoid history bloat
+          if (window.location.pathname !== cleanPath) {
+            window.history.replaceState(null, '', cleanPath)
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    sections.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [preloaderDone])
+
+  // Handle Initial Load Deep Linking (e.g., /about -> scroll to about)
+  useEffect(() => {
+    if (preloaderDone) {
+      const path = window.location.pathname.replace('/', '')
+      if (path && document.getElementById(path)) {
+        setTimeout(() => {
+          document.getElementById(path).scrollIntoView({ behavior: 'smooth' })
+        }, 1000)
+      }
+    }
+  }, [preloaderDone])
+
   // Three.js Neural Network Background
   useEffect(() => {
     const canvas = bgCanvasRef.current

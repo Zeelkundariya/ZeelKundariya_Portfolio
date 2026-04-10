@@ -9,6 +9,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
+          <a href="https://leetcode.com/u/Zeelkundariya/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-[#FFA116] transition-colors text-sm font-bold">LeetCode</a>
           <a href="#" className="text-slate-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
           <a href="#" className="text-slate-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
           <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
