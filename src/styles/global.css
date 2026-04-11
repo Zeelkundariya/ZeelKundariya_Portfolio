@@ -875,13 +875,14 @@ body.cursor-hover .cursor-outline {
   transition: background 0.3s ease;
 }
 
-.seg-1:hover~.gallery-nav .nav-1,
-.seg-2:hover~.gallery-nav .nav-2,
-.seg-3:hover~.gallery-nav .nav-3,
-.seg-4:hover~.gallery-nav .nav-4,
-.seg-5:hover~.gallery-nav .nav-5 {
+.seg-1:hover~.gallery-nav .nav-line.nav-1,
+.seg-2:hover~.gallery-nav .nav-line.nav-2,
+.seg-3:hover~.gallery-nav .nav-line.nav-3,
+.seg-4:hover~.gallery-nav .nav-line.nav-4,
+.seg-5:hover~.gallery-nav .nav-line.nav-5 {
   background: white;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  height: 3px;
 }
 
 /* ===== CERTIFICATE FILTERS ===== */
