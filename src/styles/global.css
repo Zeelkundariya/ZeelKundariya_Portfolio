@@ -297,17 +297,6 @@ body.cursor-hover .cursor-outline {
   pointer-events: none;
 }
 
-.loader-shockwave {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 2px solid white;
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10001;
-  filter: blur(2px);
-}
 
 #preloader.exit {
   opacity: 0;
@@ -346,7 +335,7 @@ body.cursor-hover .cursor-outline {
   font-family: 'Syne', sans-serif;
   font-weight: 900;
   font-size: 30vw;
-  color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.02);
   text-transform: uppercase;
   line-height: 1;
   transform: rotate(-5deg);

@@ -12,7 +12,6 @@ export default function Preloader({ onComplete }) {
     const loaderWrapper = preloader?.querySelector('.loader-wrapper')
     const laser = preloader?.querySelector('.loader-laser')
     const flash = document.getElementById('screen-flash')
-    const shockwave = document.getElementById('loader-shockwave')
     const svg = preloader?.querySelector('.loader-name-svg')
 
     // Generate stardust
@@ -85,28 +84,49 @@ export default function Preloader({ onComplete }) {
     })
     tl.to(laser, { opacity: 0, duration: 0.2 }, "-=0.2")
 
-    tl.to(svg, { filter: "drop-shadow(0 0 60px #6366f1)", scale: 1.08, duration: 0.4, ease: "power2.inOut" })
-    tl.to([namePath, nameEcho], { scale: 1.05, duration: 0.4, ease: "power2.inOut" }, "<")
+    // Removed pulses and scaling for a "perfect" stable entry
 
     tl.add(() => {
       window.preloaderState.isWarping = true
-      gsap.to(flash, { opacity: 0.3, duration: 0.1, yoyo: true, repeat: 1 })
-      gsap.fromTo(shockwave, { width: 0, height: 0, opacity: 1, scale: 0 }, { width: 2500, height: 2500, opacity: 0, scale: 1, duration: 1.3, ease: "expo.out" })
+      
+      // The "Bomb" Animation: Colorful High-Fidelity Burst
+      const colors = ['#8b5cf6', '#ec4899', '#6366f1', '#fff']
+      const container = loaderWrapper
 
-      const colors = ['#6366f1', '#ec4899', '#ffffff']
-      for (let i = 0; i < 250; i++) {
+      for (let i = 0; i < 200; i++) {
         const p = document.createElement('div')
-        p.className = 'atom-particle'
-        p.style.background = colors[Math.floor(Math.random() * colors.length)]
-        loaderWrapper.appendChild(p)
+        p.className = 'bomb-particle'
+        p.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 4 + 2}px;
+          height: ${Math.random() * 4 + 2}px;
+          background: ${colors[Math.floor(Math.random() * colors.length)]};
+          border-radius: 50%;
+          left: 50%;
+          top: 50%;
+          z-index: 100;
+          box-shadow: 0 0 10px currentColor;
+        `
+        container.appendChild(p)
+
         const angle = Math.random() * Math.PI * 2
-        const dist = Math.random() * 1200 + 600
-        gsap.to(p, { x: Math.cos(angle) * dist, y: Math.sin(angle) * dist, opacity: 0, rotation: Math.random() * 720, scale: Math.random() * 3 + 1, duration: Math.random() * 1.5 + 1.2, ease: "expo.out", onComplete: () => p.remove() })
+        const velocity = 5 + Math.random() * 15
+        const dist = 500 + Math.random() * 1000
+
+        gsap.to(p, {
+          x: Math.cos(angle) * dist,
+          y: Math.sin(angle) * dist,
+          opacity: 0,
+          scale: 0.5,
+          duration: 1.5 + Math.random(),
+          ease: "power4.out",
+          onComplete: () => p.remove()
+        })
       }
     })
 
     tl.to(preloader, {
-      opacity: 0, scale: 1.1, filter: "blur(25px)", duration: 0.5, ease: "power2.inOut",
+      opacity: 0, duration: 0.8, ease: "power2.out",
       onComplete: () => {
         clearTimeout(fallbackTimer)
         preloader.style.display = 'none'
@@ -142,8 +162,6 @@ export default function Preloader({ onComplete }) {
           </div>
         </div>
       </div>
-      <div className="screen-flash" id="screen-flash"></div>
-      <div className="loader-shockwave" id="loader-shockwave" style={{position:'fixed',top:'50%',left:'50%',transform:'translate(-50%,-50%)',zIndex:10001}}></div>
     </>
   )
 }
