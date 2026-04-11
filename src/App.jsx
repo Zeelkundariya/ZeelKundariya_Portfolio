@@ -1,4 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import { Helmet } from "react-helmet";
+
+
+
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import gsap from 'gsap'
@@ -19,6 +24,7 @@ import Footer from './components/Footer'
 import WinnerModal from './components/WinnerModal'
 import CommandPalette from './components/CommandPalette'
 import ProjectModal from './components/ProjectModal'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -392,6 +398,27 @@ function App() {
 
   return (
     <div className="font-sans antialiased text-slate-300 selection:bg-secondary selection:text-white overflow-x-hidden bg-transparent">
+      <Helmet>
+        <title>Zeel Kundariya | Full-Stack Developer & UI/UX Specialist</title>
+        <meta name="description" content="Portfolio of Zeel Kundariya, a Full-Stack Developer based in Gandhinagar. Explore projects in React, Node.js, AI Logistics, and OCR-based Financial Automation." />
+        <meta name="keywords" content="Zeel Kundariya, Full Stack Developer, React.js, Node.js, UI/UX Designer, Gandhinagar, Portfolio, Web Development, AIDTM Hackathon, Smart Expense Management" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zeel-kundariya-portfolio.vercel.app/" />
+        <meta property="og:title" content="Zeel Kundariya | Full-Stack Developer Portfolio" />
+        <meta property="og:description" content="Specializing in building high-performance, AI-integrated web applications with premium UI/UX design." />
+        <meta property="og:image" content="https://zeel-kundariya-portfolio.vercel.app/profile.jpeg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://zeel-kundariya-portfolio.vercel.app/" />
+        <meta property="twitter:title" content="Zeel Kundariya | Full-Stack Developer Portfolio" />
+        <meta property="twitter:description" content="Building the future of web with React, Node.js, and AI." />
+        <meta property="twitter:image" content="https://zeel-kundariya-portfolio.vercel.app/profile.jpeg" />
+
+        <link rel="canonical" href="https://zeel-kundariya-portfolio.vercel.app/" />
+      </Helmet>
       {/* Three.js Background */}
       <canvas id="bg-canvas" ref={bgCanvasRef}></canvas>
       <canvas id="data-streams-canvas" ref={dataStreamsRef}></canvas>
