@@ -11,32 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;700&family=Poppins:wght@600;700;800&family=Syne:wght@400;500;600;700;800&family=Prata&family=Mr+Dafoe&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#6366f1',
-            secondary: '#ec4899',
-            dark: '#020617',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Outfit', 'sans-serif'],
-          },
-          animation: {
-            'spin-slow': 'spin 8s linear infinite',
-            'float': 'float 6s ease-in-out infinite',
-            'wiggle': 'wiggle 1s ease-in-out infinite',
-          },
-        }
-      }
-    }
-  </script>
+  <!-- Initial CSS reset for White Flash fix & Premium UI support -->
   <style>
-    /* Prevent initial white flash */
     html { background: #020617; }
     body { background: transparent; margin: 0; }
 
