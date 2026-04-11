@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -37,6 +37,11 @@ const projectData = [
 ]
 
 function App() {
+  // Initialize activeSection from URL on first load
+  const [activeSection, setActiveSection] = useState(() => {
+    const path = window.location.pathname.replace('/', '')
+    return path || 'hero'
+  })
   const [preloaderDone, setPreloaderDone] = useState(false)
   const [winnerModalOpen, setWinnerModalOpen] = useState(false)
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false)
@@ -98,11 +103,9 @@ function App() {
 
       // Milestone activation
       document.querySelectorAll('.milestone-node').forEach(node => {
-        const nodeRect = node.getBoundingClientRect()
-        if (nodeRect.top < window.innerHeight * 0.7) {
+        const rect = node.getBoundingClientRect()
+        if (rect.top < window.innerHeight * 0.7) {
           node.classList.add('active')
-        } else {
-          node.classList.remove('active')
         }
       })
 
@@ -129,7 +132,8 @@ function App() {
     const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'certificates', 'contact']
     const observerOptions = {
       root: null,
-      threshold: 0.5,
+      rootMargin: '-40% 0px -40% 0px', // Detect when section is in the middle of the screen
+      threshold: 0,
     }
 
     const observerCallback = (entries) => {
@@ -138,6 +142,8 @@ function App() {
           const sectionId = entry.target.id
           const cleanPath = sectionId === 'hero' ? '/' : `/${sectionId}`
           
+          setActiveSection(sectionId)
+
           // Only update if current path is different to avoid history bloat
           if (window.location.pathname !== cleanPath) {
             window.history.replaceState(null, '', cleanPath)
@@ -154,6 +160,16 @@ function App() {
 
     return () => observer.disconnect()
   }, [preloaderDone])
+
+  // Sync state with back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace('/', '')
+      setActiveSection(path || 'hero')
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
 
   // Handle Initial Load Deep Linking (e.g., /about -> scroll to about)
   useEffect(() => {
@@ -398,8 +414,11 @@ function App() {
 
   return (
     <>
-      <Helmet>
-        <title>Zeel Kundariya | Full-Stack Developer & UI/UX Specialist</title>
+      <Helmet defer={false}>
+        <title>
+          {activeSection === 'hero' ? 'Zeel Kundariya | Full-Stack Developer' : 
+           `Zeel | ${activeSection === 'experience' ? 'Professional Journey' : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}`}
+        </title>
         <meta name="description" content="Portfolio of Zeel Kundariya, a Full-Stack Developer based in Gandhinagar. Explore projects in React, Node.js, AI Logistics, and OCR-based Financial Automation." />
         <meta name="keywords" content="Zeel Kundariya, Full Stack Developer, React.js, Node.js, UI/UX Designer, Gandhinagar, Portfolio, Web Development, AIDTM Hackathon, Smart Expense Management" />
         

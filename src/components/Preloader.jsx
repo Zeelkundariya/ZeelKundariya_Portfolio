@@ -90,7 +90,7 @@ export default function Preloader({ onComplete }) {
 
     tl.add(() => {
       window.preloaderState.isWarping = true
-      gsap.to(flash, { opacity: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
+      gsap.to(flash, { opacity: 0.3, duration: 0.1, yoyo: true, repeat: 1 })
       gsap.fromTo(shockwave, { width: 0, height: 0, opacity: 1, scale: 0 }, { width: 2500, height: 2500, opacity: 0, scale: 1, duration: 1.3, ease: "expo.out" })
 
       const colors = ['#6366f1', '#ec4899', '#ffffff']
