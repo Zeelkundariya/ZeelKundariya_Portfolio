@@ -397,7 +397,7 @@ function App() {
   }
 
   return (
-    <div className="font-sans antialiased text-slate-300 selection:bg-secondary selection:text-white overflow-x-hidden bg-transparent">
+    <>
       <Helmet>
         <title>Zeel Kundariya | Full-Stack Developer & UI/UX Specialist</title>
         <meta name="description" content="Portfolio of Zeel Kundariya, a Full-Stack Developer based in Gandhinagar. Explore projects in React, Node.js, AI Logistics, and OCR-based Financial Automation." />
@@ -419,62 +419,65 @@ function App() {
 
         <link rel="canonical" href="https://zeel-kundariya-portfolio.vercel.app/" />
       </Helmet>
-      {/* Three.js Background */}
-      <canvas id="bg-canvas" ref={bgCanvasRef}></canvas>
-      <canvas id="data-streams-canvas" ref={dataStreamsRef}></canvas>
 
-      {/* Custom Cursor */}
-      <CustomCursor />
+      <div className="font-sans antialiased text-slate-300 selection:bg-secondary selection:text-white overflow-x-hidden bg-transparent">
+        {/* Three.js Background */}
+        <canvas id="bg-canvas" ref={bgCanvasRef}></canvas>
+        <canvas id="data-streams-canvas" ref={dataStreamsRef}></canvas>
 
-      {/* Preloader */}
-      <Preloader onComplete={handlePreloaderDone} />
+        {/* Custom Cursor */}
+        <CustomCursor />
 
-      {/* Ghost Text */}
-      <div className="ghost-text-container">
-        <div className="ghost-text" id="ghost-text">ZEEL</div>
+        {/* Preloader */}
+        <Preloader onComplete={handlePreloaderDone} />
+
+        {/* Ghost Text */}
+        <div className="ghost-text-container">
+          <div className="ghost-text" id="ghost-text">ZEEL</div>
+        </div>
+
+        {/* Scroll Progress */}
+        <div id="scroll-progress"></div>
+
+        {/* Background Decoration */}
+        <div className="fixed inset-0 z-[-5] bg-dark overflow-hidden">
+          <div id="particles-js" className="absolute inset-0 z-0 pointer-events-none"></div>
+          <div className="blob w-96 h-96 bg-primary/20 rounded-full -top-20 -left-20 mix-blend-screen opacity-50"></div>
+          <div className="blob w-96 h-96 bg-secondary/20 rounded-full -bottom-20 -right-20 mix-blend-screen opacity-50" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        {/* Main Content Reveal Wrapper */}
+        <div className={`transition-all duration-1000 ${preloaderDone ? 'opacity-100' : 'opacity-0 scale-[0.98]'}`}>
+          <Navbar />
+
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Journey />
+            <Projects projects={projectData} onProjectClick={openProjectModal} />
+            <Certificates />
+            <Contact />
+            <Footer />
+          </main>
+        </div>
+
+        {/* Modals */}
+        <WinnerModal isOpen={winnerModalOpen} onClose={() => setWinnerModalOpen(false)} />
+        <CommandPalette isOpen={cmdPaletteOpen} onClose={() => setCmdPaletteOpen(false)} />
+        <ProjectModal data={projectModalData} onClose={() => setProjectModalData(null)} />
+
+        {/* SVG Filters */}
+        <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+          <defs>
+            <filter id="liquid-filter">
+              <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" seed="1" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="liquid-map" />
+            </filter>
+          </defs>
+        </svg>
       </div>
-
-      {/* Scroll Progress */}
-      <div id="scroll-progress"></div>
-
-      {/* Background Decoration */}
-      <div className="fixed inset-0 z-[-5] bg-dark overflow-hidden">
-        <div id="particles-js" className="absolute inset-0 z-0 pointer-events-none"></div>
-        <div className="blob w-96 h-96 bg-primary/20 rounded-full -top-20 -left-20 mix-blend-screen opacity-50"></div>
-        <div className="blob w-96 h-96 bg-secondary/20 rounded-full -bottom-20 -right-20 mix-blend-screen opacity-50" style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      {/* Main Content Reveal Wrapper */}
-      <div className={`transition-all duration-1000 ${preloaderDone ? 'opacity-100' : 'opacity-0 scale-[0.98]'}`}>
-        <Navbar />
-
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Journey />
-          <Projects projects={projectData} onProjectClick={openProjectModal} />
-          <Certificates />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
-
-      {/* Modals */}
-      <WinnerModal isOpen={winnerModalOpen} onClose={() => setWinnerModalOpen(false)} />
-      <CommandPalette isOpen={cmdPaletteOpen} onClose={() => setCmdPaletteOpen(false)} />
-      <ProjectModal data={projectModalData} onClose={() => setProjectModalData(null)} />
-
-      {/* SVG Filters */}
-      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
-        <defs>
-          <filter id="liquid-filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" seed="1" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="liquid-map" />
-          </filter>
-        </defs>
-      </svg>
-    </div>
+    </>
   )
 }
 
