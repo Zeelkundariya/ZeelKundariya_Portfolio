@@ -329,6 +329,7 @@ body.cursor-hover .cursor-outline {
   z-index: -1;
   overflow: hidden;
   white-space: nowrap;
+  contain: paint; /* Performance & CLS isolation */
 }
 
 .ghost-text {
@@ -339,7 +340,7 @@ body.cursor-hover .cursor-outline {
   text-transform: uppercase;
   line-height: 1;
   transform: rotate(-5deg);
-  transition: transform 0.1s linear;
+  will-change: transform; /* Promote to compositor layer for INP */
 }
 
 /* ===== GLASSMORPHISM ===== */
@@ -374,7 +375,7 @@ body.cursor-hover .cursor-outline {
 
 /* ===== TEXT GRADIENT ===== */
 .text-gradient {
-  background: linear-gradient(to right, #8b5cf6, #ec4899, #f97316, #8b5cf6);
+  background: linear-gradient(to right, #6366f1, #ec4899, #8b5cf6, #6366f1);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

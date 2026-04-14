@@ -29,11 +29,12 @@ import ProjectModal from './components/ProjectModal'
 gsap.registerPlugin(ScrollTrigger)
 
 const projectData = [
-  { title: "Expense Management", desc: "Advanced OCR financial workflow automation.", img: "/expense_management_cover.png", tags: ['FinTech', 'OCR'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/expense_management_cover.png", "/expense_management_1_1775060321664.png", "/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png"], auraColor: "rgba(168, 85, 247, 0.3)", scanColor: "#a855f7", borderColor: "primary", tagColors: [{ bg: "pink-500", text: "pink-500" }, { bg: "purple-500", text: "purple-500" }], hoverColor: "primary" },
-  { title: "Adaptive Learning", desc: "AI curriculum adaptation via metrics.", img: "/adaptive_learning_cover.png", tags: ['EdTech', 'AI/ML'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/adaptive_learning_cover.png", "/adaptive_learning_1_1775060342759.png", "/tech_generic_4_1775060561865.png", "/tech_generic_5_1775060584725.png", "/tech_generic_6_1775060604458.png"], auraColor: "rgba(59, 130, 246, 0.3)", scanColor: "#3b82f6", borderColor: "secondary", tagColors: [{ bg: "green-500", text: "green-500" }, { bg: "blue-500", text: "blue-500" }], hoverColor: "secondary" },
-  { title: "RepoReboot", desc: "DevOps orchestration & optimization for enterprise-scale infrastructure management.", img: "/reporeboot_cover.png", tags: ['DevOps', 'Automation'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/reporeboot_cover.png", "/reporeboot_1_1775060362622.png", "/tech_generic_1_1775060487362.png", "/tech_generic_4_1775060561865.png", "/tech_generic_3_1775060544286.png"], auraColor: "rgba(20, 184, 166, 0.3)", scanColor: "#14b8a6", borderColor: "teal-500", tagColors: [{ bg: "teal-500", text: "teal-500" }, { bg: "indigo-500", text: "indigo-500" }], hoverColor: "teal-400" },
-  { title: "AIDTM Hackathon", desc: "AI logistics routing solution developed for global supply chain optimization challenges.", img: "/hackathon_innovation_cover.png", tags: ['Hackathon', 'Innovation'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/hackathon_innovation_cover.png", "/hackathon_innovation_1_1775060464146.png", "/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_6_1775060604458.png"], auraColor: "rgba(236, 72, 153, 0.3)", scanColor: "#ec4899", borderColor: "pink-500", tagColors: [{ bg: "pink-500", text: "pink-500" }, { bg: "orange-500", text: "orange-500" }], hoverColor: "pink-500" },
-  { title: "GitHub Analyzer", desc: "Recruiter-friendly profile analytics, transforming complex developer data into actionable hiring insights.", img: "/github_analyzer_cover.png", tags: ['GitHub', 'HR Tech'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/github_analyzer_cover.png", "/github_portfolio_analyzer_1_1775060421953.png", "/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png"], auraColor: "rgba(99, 102, 241, 0.3)", scanColor: "#6366f1", borderColor: "indigo-500", tagColors: [{ bg: "indigo-500", text: "indigo-500" }, { bg: "purple-500", text: "purple-500" }], hoverColor: "indigo-400" },
+  { title: "LedgerCore", desc: "Enterprise-grade financial workflow automation with multi-role dashboards and real-time analytics.", img: "/ledgercore_1.jpg", tags: ['FinTech', 'Full Stack', 'Admin'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/ledgercore_1.jpg", "/ledgercore_2.jpg", "/ledgercore_3.jpg", "/ledgercore_4.jpg", "/ledgercore_1.jpg"], auraColor: "rgba(34, 197, 94, 0.3)", scanColor: "#22c55e", borderColor: "green-500", tagColors: [{ bg: "green-500", text: "green-500" }, { bg: "emerald-500", text: "emerald-500" }], hoverColor: "green-500" },
+  { title: "Adaptive AI", desc: "Intelligent curriculum adaptation engine (LearnSmart AI) with real-time emotion detection and study planning.", img: "/learnsmart_1.png", tags: ['EdTech', 'AI', 'React'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/learnsmart_1.png", "/learnsmart_2.png", "/learnsmart_3.png", "/learnsmart_4.png", "/learnsmart_5.png"], auraColor: "rgba(132, 204, 22, 0.3)", scanColor: "#84cc16", borderColor: "lime-500", tagColors: [{ bg: "lime-500", text: "lime-500" }, { bg: "green-500", text: "green-500" }], hoverColor: "lime-500" },
+  { title: "RepoReboot", desc: "AI-driven agricultural ecosystem (Rupiya.app) empowering farmers with crop diagnosis and soil analytics.", img: "/rupiya_1.png", tags: ['AgriTech', 'AI', 'Full Stack'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/rupiya_1.png", "/rupiya_2.png", "/rupiya_3.png", "/rupiya_4.png", "/rupiya_5.png"], auraColor: "rgba(20, 184, 166, 0.3)", scanColor: "#14b8a6", borderColor: "teal-500", tagColors: [{ bg: "teal-500", text: "teal-500" }, { bg: "emerald-500", text: "emerald-500" }], hoverColor: "teal-400" },
+  { title: "Logistics AI", desc: "Global supply chain optimization solution with real-time predictive routing.", img: "/logistics_1.png", tags: ['Logistics', 'AI', 'Optimization'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/logistics_1.png", "/logistics_2.png", "/logistics_3.png", "/logistics_4.png", "/logistics_5.png"], auraColor: "rgba(16, 185, 129, 0.3)", scanColor: "#10b981", borderColor: "emerald-500", tagColors: [{ bg: "emerald-500", text: "emerald-500" }, { bg: "green-500", text: "green-500" }], hoverColor: "emerald-400" },
+  { title: "GitHub Analyzer", desc: "Advanced developer profile analytics transforming raw commits into hiring intelligence.", img: "/github_analyzer_1.png", tags: ['GitHub', 'Analytics', 'Next.js'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/github_analyzer_1.png", "/github_analyzer_2.png", "/github_analyzer_3.png", "/github_analyzer_4.png", "/github_analyzer_5.png"], auraColor: "rgba(34, 197, 94, 0.3)", scanColor: "#22c55e", borderColor: "green-400", tagColors: [{ bg: "green-400", text: "green-400" }, { bg: "teal-500", text: "teal-500" }], hoverColor: "green-300" },
+  { title: "Google Meet Redesign", desc: "A sophisticated redesign of the Google Meet experience, featuring intelligent participant grids, real-time AI translation, engagement analytics, and seamless breakout room management.", img: "/google_meet_1.png", tags: ['Google Meet', 'UI Redesign', 'AI Translation'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/google_meet_1.png", "/google_meet_2.png", "/google_meet_3.png", "/google_meet_4.png", "/google_meet_5.png"], auraColor: "rgba(16, 185, 129, 0.3)", scanColor: "#10b981", borderColor: "emerald-500", tagColors: [{ bg: "emerald-500", text: "emerald-500" }, { bg: "cyan-500", text: "cyan-500" }], hoverColor: "emerald-400" },
 ]
 
 function App() {
@@ -77,51 +78,79 @@ function App() {
     return () => document.removeEventListener('keydown', handler)
   }, [])
 
-  // Scroll progress + ghost text parallax + journey progress
+  // Refs for performance-critical elements to avoid getElementById in loops
+  const scrollProgressRef = useRef(null)
+  const ghostTextRef = useRef(null)
+  const journeyProgressRef = useRef(null)
+  const navbarRef = useRef(null)
+
+  // Combined Throttled Scroll Handler
+  const milestoneNodesRef = useRef([])
+
   useEffect(() => {
-    const onScroll = () => {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    milestoneNodesRef.current = Array.from(document.querySelectorAll('.milestone-node'))
+  }, [preloaderDone])
+
+  useEffect(() => {
+    let ticking = false
+    const experienceSection = document.getElementById('experience')
+    
+    const updateScrollMetrics = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
       const scrolled = (scrollTop / scrollHeight) * 100
 
-      const progressEl = document.getElementById('scroll-progress')
-      if (progressEl) progressEl.style.width = scrolled + '%'
+      // 1. Scroll Progress
+      if (scrollProgressRef.current) {
+        scrollProgressRef.current.style.width = scrolled + '%'
+      }
 
-      const ghostText = document.getElementById('ghost-text')
-      if (ghostText) ghostText.style.transform = `rotate(-5deg) translateX(${scrollTop * 0.3}px)`
+      // 2. Ghost Text Parallax
+      if (ghostTextRef.current) {
+        ghostTextRef.current.style.transform = `rotate(-5deg) translateX(${scrollTop * 0.3}px)`
+      }
 
-      // Journey progress
-      const journeyProgress = document.getElementById('journey-progress')
-      const experienceSection = document.getElementById('experience')
-      if (journeyProgress && experienceSection) {
+      // 3. Journey Progress
+      if (journeyProgressRef.current && experienceSection) {
         const rect = experienceSection.getBoundingClientRect()
         const sectionHeight = experienceSection.offsetHeight
         const scrollPos = -rect.top
         const progress = Math.max(0, Math.min(100, (scrollPos / (sectionHeight - 400)) * 100))
-        journeyProgress.style.height = progress + '%'
+        journeyProgressRef.current.style.height = progress + '%'
       }
 
-      // Milestone activation
-      document.querySelectorAll('.milestone-node').forEach(node => {
-        const rect = node.getBoundingClientRect()
-        if (rect.top < window.innerHeight * 0.7) {
-          node.classList.add('active')
+      // 4. Milestone activation (using cached nodes)
+      milestoneNodesRef.current.forEach(node => {
+        if (!node.classList.contains('active')) {
+          const rect = node.getBoundingClientRect()
+          if (rect.top < window.innerHeight * 0.8) {
+            node.classList.add('active')
+          }
         }
       })
 
-      // Navbar shadow
-      const navbar = document.getElementById('navbar')
-      if (navbar) {
-        if (window.scrollY > 20) {
-          navbar.classList.add('shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'bg-dark/80')
-          navbar.classList.remove('bg-transparent')
+      // 5. Navbar shadow / transition
+      if (navbarRef.current) {
+        if (scrollTop > 20) {
+          navbarRef.current.classList.add('shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'bg-dark/80')
+          navbarRef.current.classList.remove('bg-transparent')
         } else {
-          navbar.classList.remove('shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'bg-dark/80')
-          navbar.classList.add('bg-transparent')
+          navbarRef.current.classList.remove('shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'bg-dark/80')
+          navbarRef.current.classList.add('bg-transparent')
         }
       }
+
+      ticking = false
     }
-    window.addEventListener('scroll', onScroll)
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollMetrics)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -221,7 +250,10 @@ function App() {
     const linesMesh = new THREE.LineSegments(linesGeometry, linesMaterial)
     scene.add(linesMesh)
 
+    // Combined input handler for Three.js
+    let ticking = false
     let mouseX = 0, mouseY = 0, lastMouseX = 0, lastMouseY = 0, mouseVelX = 0, mouseVelY = 0, surgeTimer = 0
+    let scrollProgress = 0
 
     const onMouseMove = (e) => {
       const nextX = (e.clientX / window.innerWidth - 0.5) * 40
@@ -233,24 +265,29 @@ function App() {
       mouseX = (e.clientX / window.innerWidth - 0.5) * 10
       mouseY = (e.clientY / window.innerHeight - 0.5) * 10
     }
-    document.addEventListener('mousemove', onMouseMove)
 
-    window.triggerPowerSurge = () => { surgeTimer = 1.0 }
-    document.addEventListener('mousedown', window.triggerPowerSurge)
+    const triggerPowerSurge = () => { surgeTimer = 1.0 }
 
-    let scrollProgress = 0
-    const onScroll = () => {
+    const onThreeScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight
       scrollProgress = window.scrollY / totalScroll
     }
-    window.addEventListener('scroll', onScroll)
+
+    document.addEventListener('mousemove', onMouseMove, { passive: true })
+    document.addEventListener('mousedown', triggerPowerSurge, { passive: true })
+    window.addEventListener('scroll', onThreeScroll, { passive: true })
+
+    // Pre-allocate line positions for performance
+    const maxLines = particlesCount * 8
+    const linePositionsArr = new Float32Array(maxLines * 6) 
+    linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositionsArr, 3))
 
     let animId
     function animate() {
       animId = requestAnimationFrame(animate)
       const positions = particlesGeometry.attributes.position.array
-      const linePositions = []
       const isWarping = window.preloaderState?.isWarping || false
+      let lineIdx = 0
 
       mouseVelX *= 0.95
       mouseVelY *= 0.95
@@ -258,38 +295,49 @@ function App() {
 
       for (let i = 0; i < particlesCount; i++) {
         let speedMult = isWarping ? 15 : 1
-        const dxMouse = positions[i * 3] - lastMouseX
-        const dyMouse = positions[i * 3 + 1] - (-lastMouseY)
-        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse)
+        const ix = i * 3, iy = i * 3 + 1, iz = i * 3 + 2
+        
+        const dxMouse = positions[ix] - lastMouseX
+        const dyMouse = positions[iy] - (-lastMouseY)
+        const distSqMouse = dxMouse * dxMouse + dyMouse * dyMouse
 
-        if (distMouse < 10) {
+        if (distSqMouse < 100) {
+          const distMouse = Math.sqrt(distSqMouse)
           const force = (10 - distMouse) * 0.02 * (Math.abs(mouseVelX) + Math.abs(mouseVelY))
-          positions[i * 3] -= dxMouse * force
-          positions[i * 3 + 1] -= dyMouse * force
-          positions[i * 3] += Math.sin(Date.now() * 0.001 + i) * 0.05
+          positions[ix] -= dxMouse * force
+          positions[iy] -= dyMouse * force
+          positions[ix] += Math.sin(Date.now() * 0.001 + i) * 0.05
         }
 
-        positions[i * 3] += particlesVelocities[i * 3] * speedMult
-        positions[i * 3 + 1] += particlesVelocities[i * 3 + 1] * speedMult
-        positions[i * 3 + 2] += (particlesVelocities[i * 3 + 2] + (isWarping ? 0.5 : 0)) * speedMult
+        positions[ix] += particlesVelocities[ix] * speedMult
+        positions[iy] += particlesVelocities[iy] * speedMult
+        positions[iz] += (particlesVelocities[iz] + (isWarping ? 0.5 : 0)) * speedMult
 
-        if (Math.abs(positions[i * 3]) > 35) positions[i * 3] *= -0.9
-        if (Math.abs(positions[i * 3 + 1]) > 35) positions[i * 3 + 1] *= -0.9
-        if (Math.abs(positions[i * 3 + 2]) > 35) positions[i * 3 + 2] = (Math.random() - 0.5) * 60
+        if (Math.abs(positions[ix]) > 35) positions[ix] *= -0.9
+        if (Math.abs(positions[iy]) > 35) positions[iy] *= -0.9
+        if (Math.abs(positions[iz]) > 35) positions[iz] = (Math.random() - 0.5) * 60
 
         for (let j = i + 1; j < particlesCount; j++) {
-          const dx = positions[i * 3] - positions[j * 3]
-          const dy = positions[i * 3 + 1] - positions[j * 3 + 1]
-          const dz = positions[i * 3 + 2] - positions[j * 3 + 2]
-          const dist = Math.sqrt(dx * dx + dy * dy + dz * dz)
-          if (dist < (isWarping ? 15 : 8)) {
-            linePositions.push(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2])
-            linePositions.push(positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2])
+          const jx = j * 3, jy = j * 3 + 1, jz = j * 3 + 2
+          const dx = positions[ix] - positions[jx]
+          const dy = positions[iy] - positions[jy]
+          const dz = positions[iz] - positions[jz]
+          const distSq = dx * dx + dy * dy + dz * dz
+          
+          if (distSq < (isWarping ? 200 : 64) && lineIdx < maxLines * 6) {
+            linePositionsArr[lineIdx++] = positions[ix]
+            linePositionsArr[lineIdx++] = positions[iy]
+            linePositionsArr[lineIdx++] = positions[iz]
+            linePositionsArr[lineIdx++] = positions[jx]
+            linePositionsArr[lineIdx++] = positions[jy]
+            linePositionsArr[lineIdx++] = positions[jz]
           }
         }
       }
       particlesGeometry.attributes.position.needsUpdate = true
-      linesGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePositions), 3))
+      linesGeometry.attributes.position.needsUpdate = true
+      linesGeometry.setDrawRange(0, lineIdx / 3)
+
       linesMaterial.opacity = 0.2 + (surgeTimer * 0.5)
       linesMaterial.color.setHSL(0.66, 0.8, 0.5 + (surgeTimer * 0.3))
 
@@ -319,13 +367,14 @@ function App() {
     return () => {
       cancelAnimationFrame(animId)
       document.removeEventListener('mousemove', onMouseMove)
+      document.removeEventListener('mousedown', triggerPowerSurge)
+      window.removeEventListener('scroll', onThreeScroll)
       window.removeEventListener('resize', onResize)
-      window.removeEventListener('scroll', onScroll)
       renderer.dispose()
     }
   }, [])
 
-  // Data Streams (Matrix Rain)
+  // Data Streams (Matrix Rain) - Optimized with requestAnimationFrame and lower capped FPS
   useEffect(() => {
     const streamCanvas = dataStreamsRef.current
     if (!streamCanvas) return
@@ -338,7 +387,16 @@ function App() {
     const drps = []
     for (let i = 0; i < cols; i++) drps[i] = 1
 
-    const interval = setInterval(() => {
+    let frameId
+    let lastTime = 0
+    const fps = 20 
+    const interval = 1000 / fps
+
+    const draw = (time) => {
+      frameId = requestAnimationFrame(draw)
+      if (time - lastTime < interval) return
+      lastTime = time
+
       sctx.fillStyle = 'rgba(15, 23, 42, 0.1)'
       sctx.fillRect(0, 0, sw, sh)
       sctx.fillStyle = '#6366f1'
@@ -349,9 +407,19 @@ function App() {
         if (drps[i] * fSize > sh && Math.random() > 0.975) drps[i] = 0
         drps[i]++
       }
-    }, 50)
+    }
+    frameId = requestAnimationFrame(draw)
 
-    return () => clearInterval(interval)
+    const onResize = () => {
+      sw = streamCanvas.width = window.innerWidth
+      sh = streamCanvas.height = window.innerHeight
+    }
+    window.addEventListener('resize', onResize, { passive: true })
+
+    return () => {
+      cancelAnimationFrame(frameId)
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
 
   // Particles.js (loaded via CDN in index.html)
@@ -446,34 +514,34 @@ function App() {
 
         {/* Custom Cursor */}
         <CustomCursor />
-
+ 
         {/* Preloader */}
         <Preloader onComplete={handlePreloaderDone} />
-
+ 
         {/* Ghost Text */}
         <div className="ghost-text-container">
-          <div className="ghost-text" id="ghost-text">ZEEL</div>
+          <div className="ghost-text" ref={ghostTextRef}>ZEEL</div>
         </div>
-
+ 
         {/* Scroll Progress */}
-        <div id="scroll-progress"></div>
-
+        <div id="scroll-progress" ref={scrollProgressRef}></div>
+ 
         {/* Background Decoration */}
         <div className="fixed inset-0 z-[-5] bg-dark overflow-hidden">
           <div id="particles-js" className="absolute inset-0 z-0 pointer-events-none"></div>
           <div className="blob w-96 h-96 bg-primary/20 rounded-full -top-20 -left-20 mix-blend-screen opacity-50"></div>
           <div className="blob w-96 h-96 bg-secondary/20 rounded-full -bottom-20 -right-20 mix-blend-screen opacity-50" style={{ animationDelay: '2s' }}></div>
         </div>
-
+ 
         {/* Main Content Reveal Wrapper */}
-        <div className={`transition-all duration-1000 ${preloaderDone ? 'opacity-100' : 'opacity-0 scale-[0.98]'}`}>
-          <Navbar />
-
+        <div className={`transition-opacity duration-1000 ${preloaderDone ? 'opacity-100' : 'opacity-0'}`}>
+          <Navbar ref={navbarRef} />
+ 
           <main>
             <Hero />
             <About />
             <Skills />
-            <Journey />
+            <Journey progressRef={journeyProgressRef} />
             <Projects projects={projectData} onProjectClick={openProjectModal} />
             <Certificates />
             <Contact />

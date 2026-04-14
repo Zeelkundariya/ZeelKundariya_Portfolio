@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, forwardRef } from 'react'
 import { Menu } from 'lucide-react'
 
-export default function Navbar() {
+const Navbar = forwardRef((props, ref) => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const menuRef = useRef(null)
 
@@ -41,7 +41,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed w-full z-[999999] transition-all duration-300 bg-transparent backdrop-blur-md" id="navbar">
+    <nav ref={ref} className="fixed w-full z-[999999] transition-all duration-300 bg-transparent backdrop-blur-md">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="flex flex-row items-center gap-3 group magnetic-btn no-underline">
           <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-primary via-secondary to-primary rounded-xl group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-primary/20 overflow-hidden">
@@ -91,4 +91,6 @@ export default function Navbar() {
       </div>
     </nav>
   )
-}
+})
+
+export default Navbar

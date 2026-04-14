@@ -1,4 +1,4 @@
-export default function Journey() {
+export default function Journey({ progressRef }) {
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -14,7 +14,7 @@ export default function Journey() {
         <div className="relative max-w-4xl mx-auto pl-12 md:pl-0">
           {/* Vertical Journey Line */}
           <div className="journey-line-container !left-6 md:!left-1/2">
-            <div className="journey-line-progress" id="journey-progress"></div>
+            <div className="journey-line-progress" ref={progressRef}></div>
           </div>
 
           <div className="space-y-24">
