@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Mail, MapPin, Send } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon, YoutubeIcon } from './BrandIcons'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ from_name: '', reply_to: '', message: '' })
@@ -89,6 +89,9 @@ export default function Contact() {
                     </a>
                     <a href="https://x.com/ZeelKundariya" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-primary transition-all group">
                       <TwitterIcon className="w-5 h-5 text-slate-400 group-hover:text-white" />
+                    </a>
+                    <a href="https://www.youtube.com/@ZeelKundariya" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:border-red-500 transition-all group" title="YouTube">
+                      <YoutubeIcon className="w-5 h-5 text-slate-400 group-hover:text-red-500" />
                     </a>
                   </div>
                 </div>

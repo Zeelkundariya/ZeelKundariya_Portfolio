@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight, ChevronDown, Code2 } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon } from './BrandIcons'
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon, YoutubeIcon } from './BrandIcons'
 
 export default function Hero() {
   const typedRef = useRef(null)
@@ -85,6 +85,9 @@ export default function Hero() {
             </a>
             <a href="https://x.com/ZeelKundariya" target="_blank" rel="noreferrer" className="hover:text-primary hover:scale-110 transition-all magnetic-btn">
               <TwitterIcon className="w-6 h-6" />
+            </a>
+            <a href="https://www.youtube.com/@ZeelKundariya" target="_blank" rel="noreferrer" className="hover:text-red-500 hover:scale-110 transition-all magnetic-btn" title="YouTube">
+              <YoutubeIcon className="w-6 h-6" />
             </a>
           </div>
         </div>

@@ -10,7 +10,7 @@ const certificates = [
     title: '1st Runner-up', 
     desc: 'RepoReboot event at i.Fest\'25. Organized by IEEE SB DAIICT.', 
     img: '/reporeboot.jpg', 
-    galleryImgs: ['/reporeboot.jpg', '/Zeelkundariyawinner.jpg.jpeg', '/reporeboot_1_1775060362622.png', '/tech_generic_1_1775060487362.png', '/tech_generic_3_1775060544286.png'],
+    galleryImgs: ['/reporeboot.jpg', '/Zeelkundariyawinner.jpg.jpeg', '/runner_up_1.jpg', '/runner_up_2.jpg'],
     icon: <Award className="w-8 h-8" />, 
     borderColor: '#cbd5e1', 
     bgColor: '#94a3b8', 
@@ -25,7 +25,7 @@ const certificates = [
     title: '3rd Runner-up', 
     desc: 'Hack Innovate 2026 AI/OR Hackathon by Adani Institute (AIDTM).', 
     img: '/hackinnovate.png', 
-    galleryImgs: ['/hackinnovate.png', '/hackathon_innovation_1_1775060464146.png', '/tech_generic_4_1775060561865.png', '/tech_generic_5_1775060584725.png', '/tech_generic_2_1775060512166.png'],
+    galleryImgs: ['/hackinnovate.png', '/runner_up_3rd_2.jpg', '/runner_up_3rd_3.jpg', '/runner_up_3rd_4.jpg'],
     icon: <Trophy className="w-8 h-8" />, 
     borderColor: '#d97706', 
     bgColor: '#d97706', 
@@ -40,7 +40,7 @@ const certificates = [
     title: 'Tech Expo 2026', 
     desc: 'Exhibited "Expenses Management" project at Parul University.', 
     img: '/techexpo.png', 
-    galleryImgs: ['/techexpo.png', '/expense_management_1_1775060321664.png', '/tech_generic_1_1775060487362.png', '/tech_generic_2_1775060512166.png', '/tech_generic_3_1775060544286.png'],
+    galleryImgs: ['/techexpo.png', '/tech_expo_2.jpg', '/tech_expo_3.jpg', '/tech_expo_4.jpg'],
     icon: <Presentation className="w-8 h-8" />, 
     borderColor: '#ef4444', 
     bgColor: '#f87171', 
@@ -49,11 +49,24 @@ const certificates = [
     backLabel: 'Participation', 
     backIcon: <Award className="w-5 h-5" style={{color:'#f87171'}} /> 
   },
+  { 
+    category: 'hackathon', 
+    type: 'offline', 
+    title: 'GitHub Portfolio Analyzer', 
+    desc: 'Project innovation award for automated recruitment analytics at Hack the Spring\'26, GEC Gandhinagar.', 
+    img: '/Zeel kundariya GitHub_Portfolio_Analyzer.png', 
+    galleryImgs: ['/Zeel kundariya GitHub_Portfolio_Analyzer.png', '/github_analyzer_offline_2.jpg', '/github_analyzer_offline_3.jpg', '/github_analyzer_offline_4.jpg'],
+    icon: <BarChart3 className="w-8 h-8" />, 
+    borderColor: '#a855f7', 
+    bgColor: '#c084fc', 
+    btnClass: 'bg-purple-500 text-white hover:bg-purple-400', 
+    btnText: 'View Credential', 
+    backLabel: 'Hack the Spring', 
+    backIcon: <GithubIcon className="w-5 h-5" style={{color:'#c084fc'}} /> 
+  },
   // ONLINE HACKATHONS
   { category: 'hackathon', type: 'online', title: 'Emotion-Aware Encryption', desc: 'Successfully participated in the Emotion-Aware Encryption Hackathon.', img: '/Zeel Kundariya Emotion-Aware_Encryption_Hackathon.png', icon: <Brain className="w-8 h-8" />, borderColor: '#ec4899', bgColor: '#f472b6', btnClass: 'bg-pink-500 text-white hover:bg-pink-400', btnText: 'View Award', backLabel: 'Security/AI', backIcon: <Award className="w-5 h-5" style={{color:'#f472b6'}} /> },
-  { category: 'hackathon', type: 'online', title: 'GitHub Portfolio Analyzer', desc: 'Project innovation award for automated recruitment analytics.', img: '/Zeel kundariya GitHub_Portfolio_Analyzer.png', icon: <BarChart3 className="w-8 h-8" />, borderColor: '#a855f7', bgColor: '#c084fc', btnClass: 'bg-purple-500 text-white hover:bg-purple-400', btnText: 'View Credential', backLabel: 'HR Tech', backIcon: <GithubIcon className="w-5 h-5" style={{color:'#c084fc'}} /> },
-  { category: 'hackathon', type: 'online', title: 'Code Matrix', desc: 'Advanced algorithmic challenge and competitive coding achievement.', img: '/tech_generic_1_1775060487362.png', icon: <Binary className="w-8 h-8" />, borderColor: '#06b6d4', bgColor: '#22d3ee', btnClass: 'bg-cyan-500 text-white hover:bg-cyan-400', btnText: 'View PDF', backLabel: 'Competition', backIcon: <Binary className="w-5 h-5" style={{color:'#22d3ee'}} /> },
-  
+  { category: 'hackathon', type: 'online', title: 'Code Matrix: Genesis', desc: 'Certificate of Excellence for participation in Codematrix: genesis Hackathon by GDG DR AITD, Kanpur.', img: '/code_matrix_certificate.jpg', icon: <Binary className="w-8 h-8" />, borderColor: '#06b6d4', bgColor: '#22d3ee', btnClass: 'bg-cyan-500 text-white hover:bg-cyan-400', btnText: 'View Award', backLabel: 'GDG Hackathon', backIcon: <Binary className="w-5 h-5" style={{color:'#22d3ee'}} /> },
   // ONLINE COURSES
   { category: 'online', type: 'online', title: 'Generative AI Mastermind', desc: 'Mastered key concepts in GenAI and Prompt Engineering.', img: '/genai.png', icon: <Sparkles className="w-8 h-8" />, borderColor: '#22c55e', bgColor: '#4ade80', btnClass: 'bg-green-500 text-white hover:bg-green-400', btnText: 'View Credential', backLabel: 'Completion', backIcon: <Award className="w-5 h-5" style={{color:'#4ade80'}} /> },
   { category: 'online', type: 'online', title: 'GitHub Copilot Fundamentals', desc: 'AI-assisted coding proficiency with Microsoft & Simplilearn.', img: '/githubcopilot.png', icon: <GithubIcon className="w-8 h-8" />, borderColor: '#3b82f6', bgColor: '#60a5fa', btnClass: 'bg-blue-500 text-white hover:bg-blue-400', btnText: 'View Credential', backLabel: 'Fundamentals', backIcon: <Code2 className="w-5 h-5" style={{color:'#60a5fa'}} /> },
@@ -70,7 +83,7 @@ const certificates = [
     title: 'Tata Professional Series', 
     desc: 'Enterprise-grade certification in technical and professional skills.', 
     img: '/tech_generic_6_1775060604458.png', 
-    galleryImgs: ['/tech_generic_6_1775060604458.png', '/tech_generic_1_1775060487362.png', '/tech_generic_2_1775060512166.png', '/tech_generic_3_1775060544286.png', '/tech_generic_4_1775060561865.png'],
+    galleryImgs: ['/tech_generic_6_1775060604458.png', '/tech_generic_1_1775060487362.png', '/tech_generic_2_1775060512166.png', '/tech_generic_3_1775060544286.png'],
     icon: <Building2 className="w-8 h-8" />, 
     borderColor: '#64748b', 
     bgColor: '#94a3b8', 
@@ -85,7 +98,7 @@ const certificates = [
     title: 'Coding Specialization', 
     desc: 'Certified specialization in data structures and advanced coding logic.', 
     img: '/tech_generic_3_1775060544286.png', 
-    galleryImgs: ['/tech_generic_3_1775060544286.png', '/tech_generic_4_1775060561865.png', '/tech_generic_5_1775060584725.png', '/tech_generic_6_1775060604458.png', '/tech_generic_1_1775060487362.png'],
+    galleryImgs: ['/tech_generic_3_1775060544286.png', '/tech_generic_4_1775060561865.png', '/tech_generic_5_1775060584725.png', '/tech_generic_6_1775060604458.png'],
     icon: <Code2 className="w-8 h-8" />, 
     borderColor: '#ef4444', 
     bgColor: '#f87171', 
@@ -121,7 +134,7 @@ function CertificateCard({ cert, i }) {
             <div className="w-full h-full relative group/gallery overflow-hidden">
               {/* Hover Segments */}
               <div className="absolute inset-0 z-50 flex">
-                {[0, 1, 2, 3, 4].map((idx) => (
+                {cert.galleryImgs.map((_, idx) => (
                   <div 
                     key={idx}
                     onMouseEnter={() => setActiveImg(idx)}
