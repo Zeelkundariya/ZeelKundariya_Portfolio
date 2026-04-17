@@ -1,4 +1,4 @@
-import { Code, Palette, Download, Code2 } from 'lucide-react'
+import { Code, Palette, Eye, Code2 } from 'lucide-react'
 
 export default function About() {
   return (
@@ -75,9 +75,9 @@ export default function About() {
             </div>
 
             <div data-aos="fade-up" data-aos-delay="600">
-              <a href="/resume.html" download
+              <a href="/resume.html" target="_blank" rel="noreferrer"
                 className="inline-flex items-center text-primary font-bold hover:text-white transition-colors group magnetic-btn">
-                Download Resume <Download className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
+                View Resume <Eye className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>

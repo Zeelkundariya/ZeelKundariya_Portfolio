@@ -95,20 +95,47 @@ function ProjectCard({ project, index, onClick }) {
 }
 
 export default function Projects({ projects, onProjectClick }) {
+  const categories = ["Games", "Clones", "Full Stack", "Frontend"];
+  
   return (
     <section id="projects" className="py-24 bg-transparent">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-display">
-            Featured <span className="text-gradient">Projects</span>
+            Portfolio <span className="text-gradient">Showcase</span>
           </h2>
-          <p className="text-slate-400">Some of my best work.</p>
+          <p className="text-slate-400">Categorized excellence in development.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {projects.map((project, i) => (
-            <ProjectCard key={i} project={project} index={i} onClick={onProjectClick} />
-          ))}
-        </div>
+
+        {categories.map((cat) => {
+          const filteredProjects = projects.filter(p => p.category === cat);
+          
+          return (
+            <div key={cat} className="mb-20" data-aos="fade-up">
+              <div className="flex items-center gap-4 mb-10">
+                <h3 className="text-2xl font-black text-white uppercase tracking-widest">{cat}</h3>
+                <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
+              </div>
+              
+              {filteredProjects.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  {filteredProjects.map((project, i) => (
+                    <ProjectCard 
+                      key={project.title} 
+                      project={project} 
+                      index={i} 
+                      onClick={() => onProjectClick(projects.indexOf(project))} 
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="py-10 text-center border-2 border-dashed border-white/5 rounded-3xl">
+                  <p className="text-slate-500 font-medium italic">Project entries coming soon to this category...</p>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   )
