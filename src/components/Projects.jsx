@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { ScrollText, Eye } from 'lucide-react'
 import { YoutubeIcon } from './BrandIcons'
 
@@ -95,6 +95,12 @@ function ProjectCard({ project, index, onClick }) {
 }
 
 export default function Projects({ projects, onProjectClick }) {
+  const [showAll, setShowAll] = useState(false)
+
+  // Determine which projects to show
+  const displayedProjects = showAll ? projects : projects.slice(0, 6)
+  const hasMore = projects.length > 6
+
   return (
     <section id="projects" className="py-24 bg-transparent">
       <div className="container mx-auto px-6">
@@ -104,11 +110,33 @@ export default function Projects({ projects, onProjectClick }) {
           </h2>
           <p className="text-slate-400">Some of my best work.</p>
         </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {projects.map((project, i) => (
+          {displayedProjects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} onClick={onProjectClick} />
           ))}
         </div>
+
+        {/* View More / View Less Button */}
+        {hasMore && (
+          <div className="mt-16 flex justify-center" data-aos="fade-up">
+            <button 
+              onClick={() => setShowAll(!showAll)}
+              className="group relative px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full font-bold text-white tracking-widest uppercase text-sm overflow-hidden transition-all duration-300 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)]"
+            >
+              <div className="absolute inset-0 w-0 bg-gradient-to-r from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full opacity-20"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                {showAll ? 'View Less' : 'View More'}
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} 
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
