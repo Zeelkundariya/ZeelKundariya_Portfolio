@@ -24,6 +24,7 @@ import Footer from './components/Footer'
 import WinnerModal from './components/WinnerModal'
 import CommandPalette from './components/CommandPalette'
 import ProjectModal from './components/ProjectModal'
+import MultiplayerCursors from './components/MultiplayerCursors'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -466,6 +467,16 @@ function App() {
     setTimeout(showWinnerModalOnce, 800)
   }
 
+  useEffect(() => {
+    window.triggerWarpTransition = () => {
+      gsap.fromTo('#liquid-map', 
+        { attr: { scale: 0 } }, 
+        { attr: { scale: 150 }, duration: 0.5, yoyo: true, repeat: 1, ease: 'power2.inOut' }
+      );
+    };
+    return () => delete window.triggerWarpTransition;
+  }, []);
+
   // Automatic fallback trigger for the modal (if preloader stuck)
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -514,6 +525,7 @@ function App() {
 
         {/* Custom Cursor */}
         <CustomCursor />
+        <MultiplayerCursors />
  
         {/* Preloader */}
         <Preloader onComplete={handlePreloaderDone} />
@@ -537,7 +549,7 @@ function App() {
         <div className={`transition-opacity duration-1000 ${preloaderDone ? 'opacity-100' : 'opacity-0'}`}>
           <Navbar ref={navbarRef} />
  
-          <main>
+          <main id="main-content" style={{ filter: "url(#liquid-filter)" }}>
             <Hero />
             <About />
             <Skills />

@@ -19,14 +19,22 @@ const Navbar = forwardRef((props, ref) => {
 
   const scrollToSection = (e, href) => {
     e.preventDefault()
+    
+    // Trigger WebGL Distortion Transition
+    if (window.triggerWarpTransition) {
+      window.triggerWarpTransition();
+    }
+
     const targetId = href.replace('#', '')
     const elem = document.getElementById(targetId)
     
     if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' })
-      // Update URL without #
-      const cleanPath = targetId === 'hero' ? '/' : `/${targetId}`
-      window.history.pushState(null, '', cleanPath)
+      setTimeout(() => {
+        elem.scrollIntoView({ behavior: 'smooth' })
+        // Update URL without #
+        const cleanPath = targetId === 'hero' ? '/' : `/${targetId}`
+        window.history.pushState(null, '', cleanPath)
+      }, 200); // Wait slightly to let the warp effect build up
     }
     closeMenu()
   }
