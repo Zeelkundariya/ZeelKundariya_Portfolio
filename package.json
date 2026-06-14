@@ -17,6 +17,7 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "gsap": "^3.14.2",
+    "html2canvas": "^1.4.1",
     "lucide-react": "^1.8.0",
     "matter-js": "^0.20.0",
     "prop-types": "^15.8.1",
