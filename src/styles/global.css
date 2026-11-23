@@ -814,6 +814,12 @@ body.cursor-hover .cursor-outline {
   transform: scale(1.05);
 }
 
+.gallery-img.contain-fit {
+  object-fit: contain !important;
+  background: radial-gradient(circle at center, #151e33 0%, #070b14 100%);
+  padding: 10px 0;
+}
+
 .gallery-img.img-1 {
   opacity: 1;
   z-index: 1;

@@ -30,6 +30,41 @@ import MultiplayerCursors from './components/MultiplayerCursors'
 gsap.registerPlugin(ScrollTrigger)
 
 const projectData = [
+  { 
+    title: "NayanSaathi", 
+    desc: "AI-assisted accessibility mobile companion empowering visually impaired users with real-time Gemini multimodal obstacle detection, 3x2 spatial awareness grid, pedestrian voice navigation, and 3-shake SOS emergency alerts.", 
+    img: "/nayansaathi_screen_camera.jpg", 
+    containImg: true,
+    tags: ['AI Vision', 'React Native', 'Expo Go', 'Node.js'], 
+    live: "https://github.com/Zeelkundariya/NayanSaathi", 
+    repo: "https://github.com/Zeelkundariya/NayanSaathi", 
+    demo: "https://www.youtube.com/@ZeelKundariya", 
+    galleryImgs: [
+      "/nayansaathi_screen_camera.jpg", 
+      "/nayansaathi_screen_surround.jpg", 
+      "/nayansaathi_screen_nav.jpg", 
+      "/nayansaathi_screen_sos.jpg", 
+      "/nayansaathi_screen_profile.jpg"
+    ], 
+    auraColor: "rgba(59, 130, 246, 0.4)", 
+    scanColor: "#38bdf8", 
+    borderColor: "sky-500", 
+    tagColors: [
+      { bg: "blue-500", text: "blue-400" }, 
+      { bg: "indigo-500", text: "indigo-400" }, 
+      { bg: "emerald-500", text: "emerald-400" }, 
+      { bg: "sky-500", text: "sky-400" }
+    ], 
+    hoverColor: "sky-400",
+    features: [
+      "👁️ 3x2 Spatial Obstacle Grid: Real-time hazard & drop-off detection using Google Gemini Multimodal Vision API with sub-1.4s response time.",
+      "📍 Accessible Turn-by-Turn GPS Navigation: Auditory distance-to-step guidance tailored for pedestrian mobility and public transit.",
+      "🏥 Critical Nearby Places: Instant discovery and routing to Pharmacies, Hospitals, Transit, and Police Stations.",
+      "🚨 3-Shake Accelerometer SOS: Hands-free gesture emergency trigger broadcasting live GPS coordinates and Google Maps links to guardians.",
+      "💵 Currency & Document OCR Reader: Dedicated AI modes for instant banknote denomination recognition and medical prescription reading.",
+      "📳 Sensory Haptic Engine: Tactile vibration cues providing intuitive proximity alerts and navigational heading confirmations."
+    ]
+  },
   { title: "War Economic Impact", desc: "A production-grade, full-stack analytical platform for real-time tracking, macroeconomic correlation, and geopolitical crisis management.", img: "/tech_generic_6_1775060604458.png", tags: ['Full Stack', 'Analytics', 'React'], live: "https://github.com/Zeelkundariya/war_economic_impact_dataset_zeel_kundariya", repo: "https://github.com/Zeelkundariya/war_economic_impact_dataset_zeel_kundariya", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/tech_generic_6_1775060604458.png", "/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png", "/tech_generic_4_1775060561865.png"], auraColor: "rgba(244, 63, 94, 0.3)", scanColor: "#f43f5e", borderColor: "rose-500", tagColors: [{ bg: "rose-500", text: "rose-500" }, { bg: "red-500", text: "red-500" }, { bg: "orange-500", text: "orange-500" }], hoverColor: "rose-500" },
   { title: "VahanSetu", desc: "Enterprise-grade EV charging and fleet intelligence ecosystem featuring predictive neural analytics and real-time telemetry.", img: "/tech_generic_1_1775060487362.png", tags: ['EV Mobility', 'React', 'Python'], live: "https://vahansetu.onrender.com", repo: "https://github.com/Zeelkundariya/vahansetu", demo: "https://www.youtube.com/watch?v=I8c9jt1dHHA", galleryImgs: ["/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png", "/tech_generic_4_1775060561865.png", "/tech_generic_5_1775060584725.png"], auraColor: "rgba(99, 102, 241, 0.3)", scanColor: "#6366f1", borderColor: "indigo-500", tagColors: [{ bg: "indigo-500", text: "indigo-500" }, { bg: "blue-500", text: "blue-500" }, { bg: "cyan-500", text: "cyan-500" }], hoverColor: "indigo-500" },
   { title: "LedgerCore", desc: "Enterprise-grade financial workflow automation with multi-role dashboards and real-time analytics.", img: "/ledgercore_1.jpg", tags: ['FinTech', 'Full Stack', 'Admin'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/ledgercore_1.jpg", "/ledgercore_2.jpg", "/ledgercore_3.jpg", "/ledgercore_4.jpg", "/ledgercore_1.jpg"], auraColor: "rgba(34, 197, 94, 0.3)", scanColor: "#22c55e", borderColor: "green-500", tagColors: [{ bg: "green-500", text: "green-500" }, { bg: "emerald-500", text: "emerald-500" }], hoverColor: "green-500" },

@@ -75,7 +75,7 @@ function ProjectCard({ project, index, onClick }) {
 
               {project.galleryImgs.map((img, i) => (
                 <img key={i} src={img} 
-                  className={`gallery-img img-${i+1} absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${i === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                  className={`gallery-img img-${i+1} ${project.containImg ? 'contain-fit' : 'object-cover'} absolute inset-0 w-full h-full transition-opacity duration-300 ${i === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
                   alt={`${project.title} ${i+1}`} 
                 />
               ))}
