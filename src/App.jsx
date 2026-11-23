@@ -65,6 +65,41 @@ const projectData = [
       "📳 Sensory Haptic Engine: Tactile vibration cues providing intuitive proximity alerts and navigational heading confirmations."
     ]
   },
+  { 
+    title: "TruAushdi", 
+    desc: "Hyperlocal multi-seller pharmacy marketplace and smart generic medicine discovery platform empowering 800,000+ neighborhood chemists with real-time quotation reverse-bidding, up to 70–85% generic medicine cost savings, and anti-tamper OTP delivery.", 
+    img: "/truaushdi_1.png", 
+    tags: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.io'], 
+    live: "https://github.com/Zeelkundariya/TruAushdi", 
+    repo: "https://github.com/Zeelkundariya/TruAushdi", 
+    demo: "https://www.youtube.com/@ZeelKundariya", 
+    galleryImgs: [
+      "/truaushdi_1.png", 
+      "/truaushdi_2.png", 
+      "/truaushdi_3.png", 
+      "/truaushdi_4.png", 
+      "/truaushdi_5.png"
+    ], 
+    auraColor: "rgba(16, 185, 129, 0.4)", 
+    scanColor: "#10b981", 
+    borderColor: "emerald-500", 
+    tagColors: [
+      { bg: "emerald-500", text: "emerald-400" }, 
+      { bg: "teal-500", text: "teal-400" }, 
+      { bg: "cyan-500", text: "cyan-400" }, 
+      { bg: "blue-500", text: "blue-400" }, 
+      { bg: "green-500", text: "green-400" }
+    ], 
+    hoverColor: "emerald-400",
+    features: [
+      "🌿 Smart Generic Substitute Engine: Chemical salt breakdown and bioequivalent matching delivering up to 70–85% patient savings on acute and chronic drugs.",
+      "📡 Multi-Seller Quotation Radar: Broadcasts prescriptions to nearby licensed pharmacies for real-time quotation bidding powered by Socket.io WebSockets.",
+      "📱 Dual Mobile App Ecosystem: Dedicated React Native + Expo SDK 57 client applications for both Customers (bidding & tracking) and Sellers (radar, quote builder & GST).",
+      "🔒 Anti-Tamper 4-Digit Handover OTP: Direct local chemist rider delivery (30–60 mins) verified by customer-held cryptographic OTP.",
+      "🛡️ Ephemeral Prescription Vault: Encrypted prescription storage on Cloudflare R2 with 15-minute self-destructing access links for patient confidentiality.",
+      "⚡ In-Memory Redis Speed: Sub-5 millisecond (<5ms) keystroke search across 280,000+ medicine master records on PostgreSQL (Supabase RLS)."
+    ]
+  },
   { title: "War Economic Impact", desc: "A production-grade, full-stack analytical platform for real-time tracking, macroeconomic correlation, and geopolitical crisis management.", img: "/tech_generic_6_1775060604458.png", tags: ['Full Stack', 'Analytics', 'React'], live: "https://github.com/Zeelkundariya/war_economic_impact_dataset_zeel_kundariya", repo: "https://github.com/Zeelkundariya/war_economic_impact_dataset_zeel_kundariya", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/tech_generic_6_1775060604458.png", "/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png", "/tech_generic_4_1775060561865.png"], auraColor: "rgba(244, 63, 94, 0.3)", scanColor: "#f43f5e", borderColor: "rose-500", tagColors: [{ bg: "rose-500", text: "rose-500" }, { bg: "red-500", text: "red-500" }, { bg: "orange-500", text: "orange-500" }], hoverColor: "rose-500" },
   { title: "VahanSetu", desc: "Enterprise-grade EV charging and fleet intelligence ecosystem featuring predictive neural analytics and real-time telemetry.", img: "/tech_generic_1_1775060487362.png", tags: ['EV Mobility', 'React', 'Python'], live: "https://vahansetu.onrender.com", repo: "https://github.com/Zeelkundariya/vahansetu", demo: "https://www.youtube.com/watch?v=I8c9jt1dHHA", galleryImgs: ["/tech_generic_1_1775060487362.png", "/tech_generic_2_1775060512166.png", "/tech_generic_3_1775060544286.png", "/tech_generic_4_1775060561865.png", "/tech_generic_5_1775060584725.png"], auraColor: "rgba(99, 102, 241, 0.3)", scanColor: "#6366f1", borderColor: "indigo-500", tagColors: [{ bg: "indigo-500", text: "indigo-500" }, { bg: "blue-500", text: "blue-500" }, { bg: "cyan-500", text: "cyan-500" }], hoverColor: "indigo-500" },
   { title: "LedgerCore", desc: "Enterprise-grade financial workflow automation with multi-role dashboards and real-time analytics.", img: "/ledgercore_1.jpg", tags: ['FinTech', 'Full Stack', 'Admin'], live: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", repo: "https://github.com/Zeelkundariya/Hackathon-projects-all.git", demo: "https://www.youtube.com/@ZeelKundariya", galleryImgs: ["/ledgercore_1.jpg", "/ledgercore_2.jpg", "/ledgercore_3.jpg", "/ledgercore_4.jpg", "/ledgercore_1.jpg"], auraColor: "rgba(34, 197, 94, 0.3)", scanColor: "#22c55e", borderColor: "green-500", tagColors: [{ bg: "green-500", text: "green-500" }, { bg: "emerald-500", text: "emerald-500" }], hoverColor: "green-500" },

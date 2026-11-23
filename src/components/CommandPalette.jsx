@@ -11,6 +11,7 @@ const commands = [
   ]},
   { section: 'Actions', items: [
     { icon: <GithubIcon className="w-5 h-5 text-sky-400" />, label: 'Featured: NayanSaathi (GitHub)', action: 'link:https://github.com/Zeelkundariya/NayanSaathi' },
+    { icon: <GithubIcon className="w-5 h-5 text-emerald-400" />, label: 'Featured: TruAushdi (GitHub)', action: 'link:https://github.com/Zeelkundariya/TruAushdi' },
     { icon: <Download className="w-5 h-5 text-green-400" />, label: 'Download Resume', action: 'link:resume.html' },
     { icon: <GithubIcon className="w-5 h-5 text-slate-300" />, label: 'View GitHub', action: 'link:https://github.com/Zeelkundariya' },
     { icon: <LinkedinIcon className="w-5 h-5 text-blue-400" />, label: 'View LinkedIn', action: 'link:https://www.linkedin.com/in/zeel-kundariya-bb18b5382' },
